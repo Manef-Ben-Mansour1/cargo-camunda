@@ -1,6 +1,5 @@
-# HelloworldCamunda
+# Cargo Camunda
 
-Application de démonstration Camunda BPM avec un processus "Helloworld" simple.
 
 ## Description
 
