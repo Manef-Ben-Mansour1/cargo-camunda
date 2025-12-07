@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0xjv15k" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.41.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.24.0">
+  <bpmn:process id="Incident" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="start" camunda:formKey="embedded:app:forms/incident-form.html">
+      <bpmn:outgoing>Flow_0iftfrh</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Activity_1hkv9tz" name="Publish Accident Event" camunda:class="tn.insat.urb.tp3.helloworld.AccidentServiceDelegate">
+      <bpmn:incoming>Flow_0iftfrh</bpmn:incoming>
+      <bpmn:outgoing>Flow_13474a6</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0iftfrh" sourceRef="StartEvent_1" targetRef="Activity_1hkv9tz" />
+    <bpmn:endEvent id="Event_0vrwrd3" name="end">
+      <bpmn:incoming>Flow_13474a6</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_13474a6" sourceRef="Activity_1hkv9tz" targetRef="Event_0vrwrd3" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Incident">
+      <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="182" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="189" y="145" width="23" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1q5oco2_di" bpmnElement="Activity_1hkv9tz">
+        <dc:Bounds x="370" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0vrwrd3_di" bpmnElement="Event_0vrwrd3">
+        <dc:Bounds x="622" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="631" y="145" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0iftfrh_di" bpmnElement="Flow_0iftfrh">
+        <di:waypoint x="218" y="120" />
+        <di:waypoint x="370" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13474a6_di" bpmnElement="Flow_13474a6">
+        <di:waypoint x="470" y="120" />
+        <di:waypoint x="622" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="537" y="162" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

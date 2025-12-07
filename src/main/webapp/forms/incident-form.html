@@ -1,0 +1,63 @@
+<form name="incidentForm">
+    <div class="form-group">
+        <label for="incidentId">Incident ID</label>
+        <input class="form-control"
+               id="incidentId"
+               cam-variable-type="String"
+               cam-variable-name="incidentId"
+               name="incidentId"
+               placeholder="INCIDENT_001"
+               required />
+    </div>
+    <div class="form-group">
+        <label for="location">Location</label>
+        <input class="form-control"
+               id="location"
+               cam-variable-type="String"
+               cam-variable-name="location"
+               name="location"
+               placeholder="Avenue Habib Bourguiba"
+               required />
+    </div>
+    <div class="form-group">
+        <label for="incidentType">Incident Type</label>
+        <select class="form-control"
+                id="incidentType"
+                cam-variable-type="String"
+                cam-variable-name="incidentType"
+                name="incidentType"
+                required>
+            <option value="">-- Select --</option>
+            <option value="ACCIDENT">Accident</option>
+            <option value="TRAFFIC">Heavy Traffic</option>
+            <option value="BREAKDOWN">Vehicle Breakdown</option>
+            <option value="OTHER">Other</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="severity">Severity</label>
+        <select class="form-control"
+                id="severity"
+                cam-variable-type="String"
+                cam-variable-name="severity"
+                name="severity"
+                required>
+            <option value="">-- Select --</option>
+            <option value="LOW">Low</option>
+            <option value="MEDIUM">Medium</option>
+            <option value="HIGH">High</option>
+            <option value="CRITICAL">Critical</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control"
+                  id="description"
+                  cam-variable-type="String"
+                  cam-variable-name="description"
+                  name="description"
+                  rows="4"
+                  placeholder="Describe the incident..."
+                  required></textarea>
+    </div>
+</form>

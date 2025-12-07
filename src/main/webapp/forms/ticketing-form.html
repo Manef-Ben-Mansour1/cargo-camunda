@@ -1,0 +1,48 @@
+<form name="ticketingForm">
+    <div class="form-group">
+        <label for="ticketId">Ticket ID</label>
+        <input class="form-control"
+               id="ticketId"
+               cam-variable-type="String"
+               cam-variable-name="ticketId"
+               name="ticketId"
+               placeholder="TICKET_001"
+               required />
+    </div>
+    <div class="form-group">
+        <label for="amount">Amount (TND)</label>
+        <input class="form-control"
+               id="amount"
+               cam-variable-type="String"
+               cam-variable-name="amount"
+               name="amount"
+               type="number"
+               step="0.01"
+               placeholder="5.50"
+               required />
+    </div>
+    <div class="form-group">
+        <label for="userId">User ID</label>
+        <input class="form-control"
+               id="userId"
+               cam-variable-type="String"
+               cam-variable-name="userId"
+               name="userId"
+               placeholder="user123"
+               required />
+    </div>
+    <div class="form-group">
+        <label for="paymentMethod">Payment Method</label>
+        <select class="form-control"
+                id="paymentMethod"
+                cam-variable-type="String"
+                cam-variable-name="paymentMethod"
+                name="paymentMethod"
+                required>
+            <option value="">-- Select --</option>
+            <option value="CARD">Credit Card</option>
+            <option value="WALLET">E-Wallet</option>
+            <option value="BANK">Bank Transfer</option>
+        </select>
+    </div>
+</form>

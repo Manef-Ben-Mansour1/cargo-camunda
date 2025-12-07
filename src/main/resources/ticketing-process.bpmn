@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1mzkc1n" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.41.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.24.0">
+  <bpmn:process id="Ticketing_process" isExecutable="true">
+    <bpmn:startEvent id="Ticketing" name="start" camunda:formKey="embedded:app:forms/ticketing-form.html">
+      <bpmn:outgoing>Flow_1uysabi</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Activity_1qv1r2m" name="Process Payment" camunda:class="tn.insat.urb.tp3.helloworld.PaymentServiceDelegate">
+      <bpmn:incoming>Flow_1uysabi</bpmn:incoming>
+      <bpmn:outgoing>Flow_0v7l7b4</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_1i9ycgw" name="Link Ticket to User" camunda:class="tn.insat.urb.tp3.helloworld.UserServiceDelegate">
+      <bpmn:incoming>Flow_0v7l7b4</bpmn:incoming>
+      <bpmn:outgoing>Flow_1d2gxpp</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_1uysabi" sourceRef="Ticketing" targetRef="Activity_1qv1r2m" />
+    <bpmn:sequenceFlow id="Flow_0v7l7b4" sourceRef="Activity_1qv1r2m" targetRef="Activity_1i9ycgw" />
+    <bpmn:endEvent id="Event_1bh5zoz" name="end">
+      <bpmn:incoming>Flow_1d2gxpp</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1d2gxpp" sourceRef="Activity_1i9ycgw" targetRef="Event_1bh5zoz" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Ticketing_process">
+      <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="Ticketing">
+        <dc:Bounds x="182" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="190" y="145" width="23" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1txs4zd_di" bpmnElement="Activity_1qv1r2m">
+        <dc:Bounds x="320" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1tydhdu_di" bpmnElement="Activity_1i9ycgw">
+        <dc:Bounds x="560" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1bh5zoz_di" bpmnElement="Event_1bh5zoz">
+        <dc:Bounds x="822" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="831" y="145" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1uysabi_di" bpmnElement="Flow_1uysabi">
+        <di:waypoint x="218" y="120" />
+        <di:waypoint x="320" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0v7l7b4_di" bpmnElement="Flow_0v7l7b4">
+        <di:waypoint x="420" y="120" />
+        <di:waypoint x="560" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1d2gxpp_di" bpmnElement="Flow_1d2gxpp">
+        <di:waypoint x="660" y="120" />
+        <di:waypoint x="822" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="732" y="162" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
