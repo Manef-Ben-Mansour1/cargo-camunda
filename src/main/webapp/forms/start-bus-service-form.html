@@ -1,0 +1,75 @@
+<!-- =========================================================================
+
+     1. start-bus-service-form.html - Formulaire de démarrage du service
+
+     ========================================================================= -->
+
+<form name="startBusForm">
+
+  <div class="form-group">
+    <label for="busNumber">Numéro du Bus *</label>
+    <input type="text" 
+           class="form-control" 
+           id="busNumber"
+           name="busNumber"
+           cam-variable-name="busNumber"
+           cam-variable-type="String"
+           placeholder="Ex: BUS-101"
+           required />
+  </div>
+
+  <div class="form-group">
+    <label for="routeNumber">Ligne *</label>
+    <select class="form-control" 
+            id="routeNumber"
+            name="routeNumber"
+            cam-variable-name="routeNumber"
+            cam-variable-type="String"
+            required>
+      <option value="">-- Sélectionner une ligne --</option>
+      <option value="Ligne 1 - Centre Ville">Ligne 1 - Centre Ville</option>
+      <option value="Ligne 2 - Banlieue Nord">Ligne 2 - Banlieue Nord</option>
+      <option value="Ligne 3 - Banlieue Sud">Ligne 3 - Banlieue Sud</option>
+      <option value="Ligne 4 - Express">Ligne 4 - Express</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="driverName">Nom du Chauffeur *</label>
+    <input type="text" 
+           class="form-control" 
+           id="driverName"
+           name="driverName"
+           cam-variable-name="driverName"
+           cam-variable-type="String"
+           placeholder="Nom complet du chauffeur"
+           required />
+  </div>
+
+  <div class="form-group">
+    <label for="departureTime">Heure de Départ Prévue *</label>
+    <input type="time" 
+           class="form-control" 
+           id="departureTime"
+           name="departureTime"
+           cam-variable-name="departureTime"
+           cam-variable-type="String"
+           required />
+  </div>
+
+  <div class="form-group">
+    <label for="busCapacity">Capacité du Bus</label>
+    <input type="number" 
+           class="form-control" 
+           id="busCapacity"
+           name="busCapacity"
+           cam-variable-name="busCapacity"
+           cam-variable-type="Integer"
+           value="50"
+           min="20"
+           max="100" />
+  </div>
+
+</form>
+
+

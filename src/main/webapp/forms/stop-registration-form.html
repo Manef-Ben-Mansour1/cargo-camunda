@@ -1,0 +1,112 @@
+<!-- =========================================================================
+
+     3. stop-registration-form.html - Enregistrement d'un arrêt
+
+     ========================================================================= -->
+
+<form name="stopRegistrationForm">
+
+  <h3>Enregistrement d'Arrêt</h3>
+
+  <div class="form-group">
+    <label>Bus:</label>
+    <input type="text" 
+           class="form-control" 
+           cam-variable-name="busNumber"
+           cam-variable-type="String"
+           readonly />
+  </div>
+
+  <div class="form-group">
+    <label>Arrêt Actuel:</label>
+    <input type="text" 
+           class="form-control" 
+           cam-variable-name="nextStop"
+           cam-variable-type="String"
+           readonly />
+  </div>
+
+  <div class="form-group">
+    <label>Heure d'Arrivée</label>
+    <input type="time" 
+           class="form-control" 
+           id="arrivalTime"
+           name="arrivalTime"
+           cam-variable-name="arrivalTime"
+           cam-variable-type="String"
+           required />
+  </div>
+
+  <div class="form-group">
+    <label for="passengersBoarding">Passagers Montés</label>
+    <input type="number" 
+           class="form-control" 
+           id="passengersBoarding"
+           name="passengersBoarding"
+           cam-variable-name="passengersBoarding"
+           cam-variable-type="Integer"
+           min="0"
+           value="0" />
+  </div>
+
+  <div class="form-group">
+    <label for="passengersAlighting">Passagers Descendus</label>
+    <input type="number" 
+           class="form-control" 
+           id="passengersAlighting"
+           name="passengersAlighting"
+           cam-variable-name="passengersAlighting"
+           cam-variable-type="Integer"
+           min="0"
+           value="0" />
+  </div>
+
+  <div class="form-group">
+    <label>Passagers à Bord:</label>
+    <input type="number" 
+           class="form-control" 
+           cam-variable-name="passengersOnBoard"
+           cam-variable-type="Integer"
+           readonly />
+  </div>
+
+  <div class="form-group">
+    <label for="stopConditions">Conditions à l'Arrêt</label>
+    <select class="form-control" 
+            id="stopConditions"
+            name="stopConditions"
+            cam-variable-name="stopConditions"
+            cam-variable-type="String">
+      <option value="NORMAL">Normal</option>
+      <option value="DELAY">Retard constaté</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="stopNotes">Notes (optionnel)</label>
+    <textarea class="form-control" 
+              id="stopNotes"
+              name="stopNotes"
+              cam-variable-name="stopNotes"
+              cam-variable-type="String"
+              rows="2"
+              placeholder="Incidents, observations..."></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="hasMoreStops">Y a-t-il encore des arrêts ? *</label>
+    <select class="form-control"
+            id="hasMoreStops"
+            name="hasMoreStops"
+            cam-variable-name="hasMoreStops"
+            cam-variable-type="Boolean"
+            required>
+      <option value="">-- Choisir --</option>
+      <option value="true">Oui, continuer le voyage</option>
+      <option value="false">Non, le voyage est terminé</option>
+    </select>
+  </div>
+
+</form>
+
+

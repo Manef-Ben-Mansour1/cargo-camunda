@@ -1,0 +1,102 @@
+<!-- =========================================================================
+
+     4. service-completion-form.html - Formulaire de fin de service
+
+     ========================================================================= -->
+
+<form name="serviceCompletionForm">
+
+  <h3>Rapport de Fin de Service</h3>
+
+  <div class="panel panel-info">
+    <div class="panel-heading">Résumé du Service</div>
+    <div class="panel-body">
+
+      <div class="form-group">
+        <label>Bus:</label>
+        <input type="text" class="form-control" cam-variable-name="busNumber" cam-variable-type="String" readonly />
+      </div>
+
+      <div class="form-group">
+        <label>Ligne:</label>
+        <input type="text" class="form-control" cam-variable-name="routeNumber" cam-variable-type="String" readonly />
+      </div>
+
+      <div class="form-group">
+        <label>Heure de Début:</label>
+        <input type="text" class="form-control" cam-variable-name="startTime" cam-variable-type="String" readonly />
+      </div>
+
+      <div class="form-group">
+        <label>Retard Total:</label>
+        <div class="input-group">
+          <input type="number" class="form-control" cam-variable-name="delayMinutes" cam-variable-type="Integer" readonly />
+          <div class="input-group-addon">minutes</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Arrêts Complétés:</label>
+        <input type="text" class="form-control" cam-variable-name="completedStops" cam-variable-type="Integer" readonly />
+      </div>
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="fuelLevel">Niveau de Carburant à la Fin (%)</label>
+    <input type="number" 
+           class="form-control" 
+           id="fuelLevel"
+           name="fuelLevel"
+           cam-variable-name="fuelLevel"
+           cam-variable-type="Integer"
+           min="0"
+           max="100"
+           required />
+  </div>
+
+  <div class="form-group">
+    <label for="vehicleCondition">État du Véhicule</label>
+    <select class="form-control" 
+            id="vehicleCondition"
+            name="vehicleCondition"
+            cam-variable-name="vehicleCondition"
+            cam-variable-type="String"
+            required>
+      <option value="EXCELLENT">Excellent</option>
+      <option value="GOOD">Bon</option>
+      <option value="FAIR">Acceptable</option>
+      <option value="NEEDS_MAINTENANCE">Nécessite maintenance</option>
+      <option value="DAMAGED">Endommagé</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="maintenanceRequired">Maintenance Requise?</label>
+    <select class="form-control" 
+            id="maintenanceRequired"
+            name="maintenanceRequired"
+            cam-variable-name="maintenanceRequired"
+            cam-variable-type="Boolean"
+            required>
+      <option value="false">Non</option>
+      <option value="true">Oui</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="finalReport">Rapport Final du Chauffeur</label>
+    <textarea class="form-control" 
+              id="finalReport"
+              name="finalReport"
+              cam-variable-name="finalReport"
+              cam-variable-type="String"
+              rows="4"
+              placeholder="Incidents, observations, suggestions..."
+              required></textarea>
+  </div>
+
+</form>
+
+
