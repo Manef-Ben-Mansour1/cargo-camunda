@@ -1,0 +1,93 @@
+<form name="accidentComplaintForm" role="form">
+    <h3>📋 Nouvelle Réclamation d'Accident</h3>
+    <p>Veuillez remplir tous les champs ci-dessous</p>
+
+    <div class="form-group">
+        <label for="complaintId">ID Réclamation *</label>
+        <input class="form-control"
+               id="complaintId"
+               cam-variable-type="String"
+               cam-variable-name="complaintId"
+               name="complaintId"
+               placeholder="ACC_2025_001"
+               required />
+    </div>
+
+    <div class="form-group">
+        <label for="citizenName">Nom du Citoyen *</label>
+        <input class="form-control"
+               id="citizenName"
+               cam-variable-type="String"
+               cam-variable-name="citizenName"
+               name="citizenName"
+               placeholder="Jean Dupont"
+               required />
+    </div>
+
+    <div class="form-group">
+        <label for="accidentLocation">Lieu de l'Accident *</label>
+        <input class="form-control"
+               id="accidentLocation"
+               cam-variable-type="String"
+               cam-variable-name="accidentLocation"
+               name="accidentLocation"
+               placeholder="Avenue Habib Bourguiba, Tunis"
+               required />
+    </div>
+
+    <div class="form-group">
+        <label for="accidentDescription">Description de l'Accident *</label>
+        <textarea class="form-control"
+                  id="accidentDescription"
+                  cam-variable-type="String"
+                  cam-variable-name="accidentDescription"
+                  name="accidentDescription"
+                  rows="4"
+                  placeholder="Décrivez l'accident en détail..."
+                  required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="accidentDate">Date de l'Accident *</label>
+        <input class="form-control"
+               id="accidentDate"
+               cam-variable-type="String"
+               cam-variable-name="accidentDate"
+               name="accidentDate"
+               type="date"
+               required />
+    </div>
+
+    <div class="form-group">
+        <label for="contactPhone">Téléphone de Contact</label>
+        <input class="form-control"
+               id="contactPhone"
+               cam-variable-type="String"
+               cam-variable-name="contactPhone"
+               name="contactPhone"
+               type="tel"
+               placeholder="+216 XX XXX XXX" />
+    </div>
+
+    <div class="form-group">
+        <label for="contactEmail">Email de Contact</label>
+        <input class="form-control"
+               id="contactEmail"
+               cam-variable-type="String"
+               cam-variable-name="contactEmail"
+               name="contactEmail"
+               type="email"
+               placeholder="citoyen@email.com" />
+    </div>
+</form>
+
+<script cam-script type="text/form-script">
+    // Injecter le context path si manquant
+    if (!camForm.contextPath) {
+        camForm.contextPath = '/HelloCamunda1';
+    }
+
+    camForm.on('form-loaded', function() {
+        console.log('Formulaire de réclamation chargé');
+    });
+</script>

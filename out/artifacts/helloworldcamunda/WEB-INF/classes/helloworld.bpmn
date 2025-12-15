@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0a359rq" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.41.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.24.0">
+  <bpmn:process id="helloworld" name="Helloworld" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Dis Bonjour" camunda:formKey="embedded:app:forms/dis-bonjour.html">
+      <bpmn:outgoing>Flow_07rdd6a</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_07rdd6a" sourceRef="StartEvent_1" targetRef="Activity_00gy35c" />
+    <bpmn:userTask id="Activity_00gy35c" name="Ajouter Bonjour" camunda:formKey="embedded:app:forms/bonjour.html" camunda:assignee="John">
+      <bpmn:incoming>Flow_07rdd6a</bpmn:incoming>
+      <bpmn:outgoing>Flow_0373lak</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:intermediateThrowEvent id="Event_1whj39i">
+      <bpmn:incoming>Flow_0uwbqb4</bpmn:incoming>
+    </bpmn:intermediateThrowEvent>
+    <bpmn:serviceTask id="Activity_07hnke8" name="Dire Bonjour" camunda:class="tn.insat.urb.tp3.helloworld.ProcessRequestDelegate">
+      <bpmn:incoming>Flow_0373lak</bpmn:incoming>
+      <bpmn:outgoing>Flow_0uwbqb4</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0373lak" sourceRef="Activity_00gy35c" targetRef="Activity_07hnke8" />
+    <bpmn:sequenceFlow id="Flow_0uwbqb4" sourceRef="Activity_07hnke8" targetRef="Event_1whj39i" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="helloworld">
+      <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="182" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="171" y="145" width="59" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0c24w5a_di" bpmnElement="Activity_00gy35c">
+        <dc:Bounds x="270" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0h5yt84_di" bpmnElement="Activity_07hnke8">
+        <dc:Bounds x="480" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1whj39i_di" bpmnElement="Event_1whj39i">
+        <dc:Bounds x="682" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_07rdd6a_di" bpmnElement="Flow_07rdd6a">
+        <di:waypoint x="218" y="120" />
+        <di:waypoint x="270" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0373lak_di" bpmnElement="Flow_0373lak">
+        <di:waypoint x="370" y="120" />
+        <di:waypoint x="480" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0uwbqb4_di" bpmnElement="Flow_0uwbqb4">
+        <di:waypoint x="580" y="120" />
+        <di:waypoint x="682" y="120" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

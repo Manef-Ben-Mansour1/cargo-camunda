@@ -9,6 +9,7 @@
         <resource>tracking-process.bpmn</resource>
         <resource>ticketing-process.bpmn</resource>
         <resource>incident-process.bpmn</resource>
+        <resource>incident-complaint.bpmn</resource>
         <resource>complaints-process.bpmn</resource>
         <properties>
             <property name="isDeleteUponUndeploy">false</property>

@@ -1,0 +1,28 @@
+<form name="physicalVerificationForm" role="form">
+    <h3>Vérification Physique</h3>
+
+    <div class="form-group">
+        <label for="inspectorName">Inspecteur</label>
+        <input class="form-control"
+               id="inspectorName"
+               type="text"
+               placeholder="Votre nom" />
+    </div>
+
+    <div class="form-group">
+        <label for="observations">Observations</label>
+        <textarea class="form-control"
+                  id="observations"
+                  rows="4"
+                  placeholder="Vos observations..."></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="result">Résultat</label>
+        <select class="form-control" id="result">
+            <option value="">-- Sélectionnez --</option>
+            <option value="CONFIRMED">✅ Confirmé</option>
+            <option value="REJECTED">❌ Rejeté</option>
+        </select>
+    </div>
+</form>

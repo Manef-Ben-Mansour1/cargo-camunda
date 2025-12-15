@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_10y4yvq" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.41.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.24.0">
+  <bpmn:process id="TrackingProcess" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="start" camunda:formKey="embedded:app:forms/tracking-form.html">
+      <bpmn:outgoing>Flow_06uzoyh</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Activity_0fq2mse" name="Track GPS Position" camunda:class="tn.insat.urb.tp3.helloworld.TrackingServiceDelegate">
+      <bpmn:incoming>Flow_06uzoyh</bpmn:incoming>
+      <bpmn:outgoing>Flow_0jxb8yl</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_06uzoyh" sourceRef="StartEvent_1" targetRef="Activity_0fq2mse" />
+    <bpmn:serviceTask id="Activity_18nau5n" name="Update Scheduling" camunda:class="tn.insat.urb.tp3.helloworld.SchedulingServiceDelegate">
+      <bpmn:incoming>Flow_0jxb8yl</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ky062s</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0jxb8yl" sourceRef="Activity_0fq2mse" targetRef="Activity_18nau5n" />
+    <bpmn:serviceTask id="Activity_1sjmi2j" name="Send Notification" camunda:class="tn.insat.urb.tp3.helloworld.NotificationServiceDelegate">
+      <bpmn:incoming>Flow_0ky062s</bpmn:incoming>
+      <bpmn:outgoing>Flow_08rgwqr</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0ky062s" sourceRef="Activity_18nau5n" targetRef="Activity_1sjmi2j" />
+    <bpmn:endEvent id="Event_1vn6s5o">
+      <bpmn:incoming>Flow_08rgwqr</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_08rgwqr" name="end" sourceRef="Activity_1sjmi2j" targetRef="Event_1vn6s5o" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="TrackingProcess">
+      <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="182" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="189" y="145" width="23" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_144yclo_di" bpmnElement="Activity_0fq2mse">
+        <dc:Bounds x="280" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1t7kq7m_di" bpmnElement="Activity_18nau5n">
+        <dc:Bounds x="470" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_15nogfb_di" bpmnElement="Activity_1sjmi2j">
+        <dc:Bounds x="680" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1vn6s5o_di" bpmnElement="Event_1vn6s5o">
+        <dc:Bounds x="882" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_06uzoyh_di" bpmnElement="Flow_06uzoyh">
+        <di:waypoint x="218" y="120" />
+        <di:waypoint x="280" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0jxb8yl_di" bpmnElement="Flow_0jxb8yl">
+        <di:waypoint x="380" y="120" />
+        <di:waypoint x="470" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ky062s_di" bpmnElement="Flow_0ky062s">
+        <di:waypoint x="570" y="120" />
+        <di:waypoint x="680" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="583" y="162" width="84" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08rgwqr_di" bpmnElement="Flow_08rgwqr">
+        <di:waypoint x="780" y="120" />
+        <di:waypoint x="882" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="822" y="102" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

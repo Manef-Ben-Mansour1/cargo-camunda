@@ -9,7 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24faa470-b6db-42e3-869e-4a44c6845198" name="Changes" comment="" />
+    <list default="true" id="24faa470-b6db-42e3-869e-4a44c6845198" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tn/insat/urb/tp3/helloworld/AnalyzeSensorsDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tn/insat/urb/tp3/helloworld/ConfirmAccidentDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tn/insat/urb/tp3/helloworld/CreateComplaintRecordDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tn/insat/urb/tp3/helloworld/LogErrorDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tn/insat/urb/tp3/helloworld/NotifyAgentDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tn/insat/urb/tp3/helloworld/RejectComplaintDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tn/insat/urb/tp3/helloworld/SaveComplaintDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tn/insat/urb/tp3/helloworld/TransferToMobilityDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/incident-complaint.bpmn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/forms/accident-complaint-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/forms/physical-verification-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/forms/take-charge-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/processes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/processes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ticketing-process.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ticketing-process.bpmn" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +38,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -52,6 +71,9 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/moham/IdeaProjects/HelloworldCamunda",
     "node.js.detected.package.eslint": "true",
@@ -109,8 +131,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
-        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
+        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-IU-253.28294.334" />
       </set>
     </attachedChunks>
   </component>
@@ -125,6 +147,8 @@
       <workItem from="1763815560870" duration="3690000" />
       <workItem from="1763819274903" duration="11082000" />
       <workItem from="1763981600635" duration="1311000" />
+      <workItem from="1765531049214" duration="14027000" />
+      <workItem from="1765804202867" duration="6873000" />
     </task>
     <servers />
   </component>
